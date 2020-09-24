@@ -1,0 +1,47 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger REST Article
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+basePath: "/api"
+
+# Paths supported by the server application
+paths:
+  /work_order/{name}:
+    get:
+      operationId: "PM.work_order.load"
+      tags:
+        - "PM.work_order"
+      summary: "The WO data structure supported by the server application"
+      description: "Update the work order"
+      responses:
+        200:
+          description: "Successful read WO operation"
+          schema:
+            type: "string"
+      parameters:
+        - name: name
+          in: path
+          description: Name of the person to greet.
+          required: true
+          type: string 
+  /notification_geam:
+    get:
+      operationId: "PM.notification_geam.load"
+      tags:
+        - "PM.notification_geam"
+      summary: "Load all GEAM notification into the SQL Server Database"
+      description: "Update the work order"
+      responses:
+        201:
+          description: "Created"
+          schema:
+            type: "string"
+
+
+            
